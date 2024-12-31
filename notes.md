@@ -30,5 +30,30 @@ _Implicit usings_
 
 The [Environment class](https://learn.microsoft.com/en-us/dotnet/api/system.environment?view=net-9.0#properties) gives you access to information about the device/platform. 
 
+The `default` keyword represents the default value for a given data type:
+
+```C#
+int i = default;  // i = 0
+bool b = default; // b = False
+```
+
+C# has implicit type conversion. Ex: if you concat an int and a char together the char is converted to its numerical ASCII value. 
+
+Defining a `struct`: 
+
+```C#
+struct MyStruct
+{
+    public int a;
+    public bool b;
+}
+```
+
+* You'd use `struct`s when dealing with small, lightweight data types that represent a single value or concept, and when you want to avoid the overhead associated with classes
+
+_Passed by copy_ - When value types such as `int` or `struct` are passed into a function, .NET creates a copy of the variable and modifications to the variable inside of the function do not affect the variable outside of the function. 
+
+_Passed by reference_ - When reference types such as `object` are passed into a function, .NET maintains a reference to the original variable. Modifications to the variable inside of the function also affect the variable outside of the function. Other reference types include: `string`, `class`, `record`
+
 ---
 End of document
