@@ -55,5 +55,21 @@ _Passed by copy_ - When value types such as `int` or `struct` are passed into a 
 
 _Passed by reference_ - When reference types such as `object` are passed into a function, .NET maintains a reference to the original variable. Modifications to the variable inside of the function also affect the variable outside of the function. Other reference types include: `string`, `class`, `record`
 
+`System.GC` lets you interact with the .NET garbage collector.
+
+Lookup the # of bytes allocated by the program: 
+
+```C#
+long bytes = GC.GetTotalMemory(false);
+```
+
+Manually call the garbage collector:
+
+```C#
+GC.Collect();
+```
+
+* Mainly for testing purposes
+
 ---
 End of document
