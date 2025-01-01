@@ -71,5 +71,30 @@ GC.Collect();
 
 * Mainly for testing purposes
 
+## Ch. 2 Working with Strings
+
+Topics covered: 
+
+* String interpolation
+* String formatting 
+
+You can pad values by adding a comma and a number after the variable in an interpolated string. A negative number makes the variable's value left-aligned within the alloted space, a positive number makes the variable's value right-aligned within the alloted space.
+
+```C#
+Console.WriteLine($"{"Column1", -12} | {"Column2", 12}");
+Console.WriteLine($"{3, -12} | {5, 12}");
+
+// Output:
+// Column1      |      Column2
+// 3            |            5
+```
+
+You can do the same thing as above but with format strings:
+
+```C#
+Console.WriteLine("{0, -12} | {1, 12}", "Column1", "Column2");
+Console.WriteLine("{0, -12} | {1, 12}", 3, 5);
+```
+
 ---
 End of document
