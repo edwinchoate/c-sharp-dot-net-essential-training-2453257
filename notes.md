@@ -77,6 +77,19 @@ Topics covered:
 
 * String interpolation
 * String formatting 
+* String manipulation
+    * `String.Concat`
+    * `String.Join`
+    * `String.Equals`
+    * `String.Compare`
+    * `String.Replace`
+* String searching
+    * `String.Contains`
+    * `String.StartsWith`
+    * `String.EndsWith`
+    * `String.IndexOf`
+    * `String.LastIndexOf`
+    * `String.IsNullOrEmpty`
 
 You can pad values by adding a comma and a number after the variable in an interpolated string. A negative number makes the variable's value left-aligned within the alloted space, a positive number makes the variable's value right-aligned within the alloted space.
 
