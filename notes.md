@@ -149,5 +149,46 @@ Topics covered:
         * `$"{AprFools:MMM d yyyy}"` Apr 1 2025
 * `DateTime.TryParse(string, out DateTime)`
 
+## Ch. 4 Working with Files 
+
+Create a text file and write content to it:
+
+```C#
+using (StreamWriter sw = File.CreateText("hello.txt")) 
+{
+    sw.WriteLine("Hello world!");
+}
+```
+
+Delete a file:
+
+```C#
+const string filename = "hello.txt";
+
+if (File.Exists(filename))
+    File.Delete(filename);
+```
+
+Over-write all of the content of a text file:
+
+```C#
+File.WriteAllText("hello.txt", "This content replaces all of content that was previously in hello.txt");
+```
+
+Read all of the text from a text file: 
+
+```C#
+string text = File.ReadAllText("hello.txt");
+```
+
+Append text to a file:
+
+```C#
+using (StreamWriter sw = File.Append("hello.txt")) 
+{
+    sw.WriteLine("This line is added to the end of the file.");
+}
+```
+
 ---
 End of document
