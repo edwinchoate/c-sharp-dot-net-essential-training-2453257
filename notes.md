@@ -190,5 +190,30 @@ using (StreamWriter sw = File.Append("hello.txt"))
 }
 ```
 
+Accessing File metadata
+
+* `File.GetCreationTime`
+    * `File.SetCreationTime`
+* `File.GetLastWriteTime`
+    * `File.SetLastWriteTime`
+* `File.GetLastAccessTime`
+    * `File.SetLastAccessTime`
+
+Set a file to read-only:
+
+```C#
+File.SetAttributes("hello.txt", FileAttributes.ReadOnly);
+```
+
+Get file info with the `FileInfo` class:
+
+```C#
+FileInfo fileInfo = new FileInfo("hello.txt");
+
+long fileLength = fileInfo.Length;
+DirectoryInfo directory = fileInfo.Directory;
+bool isReadOnly = fileInfo.IsReadOnly;
+```
+
 ---
 End of document
