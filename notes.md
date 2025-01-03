@@ -135,6 +135,18 @@ Topics covered:
     * `TimeSpan` type
     * `DateOnly` type
     * `TimeOnly` type
+* Formatting DateTimes (ex: `$"{someDateTime:d}"`)
+    * `:d` - 4/1/2025
+    * `:D` - Tuesday, April 1, 2025
+    * `:f` - Tuesday, April 1, 2025 1:23PM
+    * `:F` - Tuesday, April 1, 2025 1:23:30PM
+    * `:g` - 4/1/2025 1:23PM
+    * `:G` - 4/1/2025 1:23:30PM
+    * `CultureInfo.CreateSpecificCulture(string)`
+    * Custom formatting 
+        * `$"{someDateTime:dddd -- MMMM d, yyyy}"` Tuesday -- April 1, 2025
+        * `$"{AprFools:ddd h:mm:ss tt}"` Tue 1:23:30 PM
+        * `$"{AprFools:MMM d yyyy}"` Apr 1 2025
 
 ---
 End of document
