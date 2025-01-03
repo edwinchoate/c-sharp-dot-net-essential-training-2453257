@@ -147,6 +147,7 @@ Topics covered:
         * `$"{someDateTime:dddd -- MMMM d, yyyy}"` Tuesday -- April 1, 2025
         * `$"{AprFools:ddd h:mm:ss tt}"` Tue 1:23:30 PM
         * `$"{AprFools:MMM d yyyy}"` Apr 1 2025
+* `DateTime.TryParse(string, out DateTime)`
 
 ---
 End of document
