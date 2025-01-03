@@ -337,5 +337,21 @@ Console.WriteLine(capitalizedWords.Replace("hello World", new MatchEvaluator(Lee
 // hello W0r1d
 ```
 
+Regex can cause performance issues if the pattern search is complex and takes a long time to run. This is where timeouts become useful. 
+
+Example of implementing a timeout on a regex:
+
+```C#
+TimeSpan timeout = TimeSpan.FromMilliseconds(1000);
+
+try 
+{
+    Regex regex = new Regex(@"(a+a+a+)+b", RegexOptions.None, timeout);
+    ...
+}
+catch (RegexMatchTimeoutException e) 
+{...}
+```
+
 ---
 End of document
