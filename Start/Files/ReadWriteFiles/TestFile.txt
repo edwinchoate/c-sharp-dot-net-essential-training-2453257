@@ -1,0 +1,4 @@
+This content replaces everything in a TXT file. This text is appended to the file.
+line 1
+line 2
+line 3
