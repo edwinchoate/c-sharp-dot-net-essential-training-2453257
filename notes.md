@@ -163,7 +163,7 @@ using (StreamWriter sw = File.CreateText("hello.txt"))
 Delete a file:
 
 ```C#
-const string filename = "hello.txt";
+string filename = "hello.txt";
 
 if (File.Exists(filename))
     File.Delete(filename);
@@ -213,6 +213,44 @@ FileInfo fileInfo = new FileInfo("hello.txt");
 long fileLength = fileInfo.Length;
 DirectoryInfo directory = fileInfo.Directory;
 bool isReadOnly = fileInfo.IsReadOnly;
+```
+
+Create a directory:
+
+```C#
+string dirname = "my-folder";
+
+if (!Directory.Exists(dirname))
+    Directory.CreateDirectory(dirname);
+```
+
+Delete a directory:
+
+```C#
+string dirname = "my-folder";
+
+if (Directory.Exists(dirname))
+    Directory.Delete(dirname);
+```
+
+Get directory info:
+
+```C#
+DirectoryInfo dirInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+
+string name = dirInfo.Name;
+DirectoryInfo parent = dirInfo.Parent;
+DateTime creationTime = dirInfo.CreationTime;
+```
+
+Get the contents of a specified directory:
+
+```C#
+var directories = new List<string>(Directory.EnumerateDirectories(Directory.GetCurrentDirectory()));
+
+var files = new List<string>(Directory.EnumerateFiles(Directory.GetCurrentDirectory()));
+
+var everything = new List<string>(Directory.EnumerateFileSystemEntries(Directory.GetCurrentDirectory()));
 ```
 
 ---
