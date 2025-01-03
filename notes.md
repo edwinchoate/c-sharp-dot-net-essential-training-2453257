@@ -253,5 +253,59 @@ var files = new List<string>(Directory.EnumerateFiles(Directory.GetCurrentDirect
 var everything = new List<string>(Directory.EnumerateFileSystemEntries(Directory.GetCurrentDirectory()));
 ```
 
+## Regular Expressions
+
+`System.Text.RegularExpressions`
+
+Creating a regex object
+
+```C#
+using System.Text.RegularExpressions;
+
+Regex capitalizedWords = new Regex(@"[A-Z]\w+");
+```
+
+Ignore case with `RegexOptions`:
+
+```C#
+Regex regex = new Regex("abc", RegexOptions.IgnoreCase);
+```
+
+Test to see if a given string would be a match for a given regex pattern:
+
+```C#
+Regex capitalizedWords = new Regex(@"[A-Z]\w+");
+
+Console.WriteLine(capitalizedWords.IsMatch("hello"));  // --> False
+Console.WriteLine(capitalizedWords.IsMatch("Hello")); // --> True
+```
+
+Iterate through each match one at a time:
+
+```C#
+Regex capitalizedWords = new Regex(@"[A-Z]\w+");
+
+Match match = capitalizedWords.Match("The quick Brown fox Jumps over The Lazy dog.");
+// .Match returns the first match found
+
+while (match.Success)
+{
+    Console.Write($"{match.Value} ");
+    match = match.NextMatch();
+} 
+// The Brown Jumps The Lazy
+```
+
+Get all matches: 
+
+```C#
+Regex capitalizedWords = new Regex(@"[A-Z]\w+");
+
+MatchCollection matches = capitalizedWords.Matches("The quick Brown fox Jumps over The Lazy dog.");
+
+foreach (Match match in matches) 
+{...}
+```
+
 ---
 End of document
