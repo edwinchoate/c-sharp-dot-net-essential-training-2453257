@@ -109,5 +109,32 @@ Console.WriteLine("{0, -12} | {1, 12}", "Column1", "Column2");
 Console.WriteLine("{0, -12} | {1, 12}", 3, 5);
 ```
 
+## Ch. 3 Using Numbers and Dates
+
+Topics covered:
+
+* Parse
+    * `int.Parse`
+    * `float.Parse`
+    * `FormatException` - if a number can't be parsed
+    * `int.TryParse`
+    * `float.TryParse`
+* Format strings (ex: `$"{someVar:D}"`)
+    * `:D` - decimal
+    * `:N` - number 
+    * `:G` - general 
+    * `:F` - fixed-point
+    * `:E` - exponential
+    * `:P` - percent
+    * `:X` - hexidecimal
+    * `:C` - currency
+    * with precision (ex: `$"{someVar:D6}"` is a decimal with six digits of precision)
+    * with padding and precision (ex: `$"{someVar,12:D6}"` is a decimal with 12 spaces of padding and six digits of precision)
+* `DateTime` class
+    * `AddDays(int)`, `AddHours(int)`, etc.
+    * `TimeSpan` type
+    * `DateOnly` type
+    * `TimeOnly` type
+
 ---
 End of document
