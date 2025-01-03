@@ -307,5 +307,35 @@ foreach (Match match in matches)
 {...}
 ```
 
+A simple find and replace: 
+
+```C#
+Regex capitalizedWords = new Regex(@"[A-Z]\w+");
+
+Console.WriteLine(capitalizedWords.Replace("hello World", "!!!"));
+// hello !!!
+```
+
+Find and replace with a function:
+
+```C#
+Regex capitalizedWords = new Regex(@"[A-Z]\w+");
+
+string Leet (Match match) 
+{
+    string leeted = "";
+    foreach (char c in match.ToString()) 
+    {
+        if (c == 'o') leeted += '0';
+        else if (c == 'l') leeted += '1';
+        else leeted += c;
+    }
+    return leeted;
+}
+
+Console.WriteLine(capitalizedWords.Replace("hello World", new MatchEvaluator(Leet)));
+// hello W0r1d
+```
+
 ---
 End of document
