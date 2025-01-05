@@ -94,8 +94,8 @@ Topics covered:
 You can pad values by adding a comma and a number after the variable in an interpolated string. A negative number makes the variable's value left-aligned within the alloted space, a positive number makes the variable's value right-aligned within the alloted space.
 
 ```C#
-Console.WriteLine($"{"Column1", -12} | {"Column2", 12}");
-Console.WriteLine($"{3, -12} | {5, 12}");
+Console.WriteLine($"{"Column1",-12} | {"Column2",12}");
+Console.WriteLine($"{3,-12} | {5,12}");
 
 // Output:
 // Column1      |      Column2
@@ -105,8 +105,8 @@ Console.WriteLine($"{3, -12} | {5, 12}");
 You can do the same thing as above but with format strings:
 
 ```C#
-Console.WriteLine("{0, -12} | {1, 12}", "Column1", "Column2");
-Console.WriteLine("{0, -12} | {1, 12}", 3, 5);
+Console.WriteLine("{0,-12} | {1,12}", "Column1", "Column2");
+Console.WriteLine("{0,-12} | {1,12}", 3, 5);
 ```
 
 ## Ch. 3 Using Numbers and Dates
@@ -145,8 +145,8 @@ Topics covered:
     * `CultureInfo.CreateSpecificCulture(string)`
     * Custom formatting 
         * `$"{someDateTime:dddd -- MMMM d, yyyy}"` Tuesday -- April 1, 2025
-        * `$"{AprFools:ddd h:mm:ss tt}"` Tue 1:23:30 PM
-        * `$"{AprFools:MMM d yyyy}"` Apr 1 2025
+        * `$"{someDateTime:ddd h:mm:ss tt}"` Tue 1:23:30 PM
+        * `$"{someDateTime:MMM d yyyy}"` Apr 1 2025
 * `DateTime.TryParse(string, out DateTime)`
 
 ## Ch. 4 Working with Files 
@@ -184,7 +184,7 @@ string text = File.ReadAllText("hello.txt");
 Append text to a file:
 
 ```C#
-using (StreamWriter sw = File.Append("hello.txt")) 
+using (StreamWriter sw = File.AppendAllText("hello.txt")) 
 {
     sw.WriteLine("This line is added to the end of the file.");
 }
@@ -346,7 +346,7 @@ TimeSpan timeout = TimeSpan.FromMilliseconds(1000);
 
 try 
 {
-    Regex regex = new Regex(@"(a+a+a+)+b", RegexOptions.None, timeout);
+    Regex regex = new Regex(@"(a+a+a+a+a+a+)+b", RegexOptions.None, timeout);
     ...
 }
 catch (RegexMatchTimeoutException e) 
